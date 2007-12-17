@@ -13,7 +13,6 @@ Source:		ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/%{module}-%{version
 URL:		ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/%{module}-%{version}.readme
 BuildArch:	noarch
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 This  code  provides  various  crypt()-compatible  interfaces  to  the
