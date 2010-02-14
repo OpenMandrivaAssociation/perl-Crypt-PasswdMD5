@@ -1,19 +1,18 @@
-%define	module	Crypt-PasswdMD5
-%define	name	perl-%{module}
-%define	version	1.3
-%define	release	%mkrel 7
+%define	upstream_name	 Crypt-PasswdMD5
+%define	upstream_version 1.3
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Perl extension for crypt()-compatible interfaces to the MD5-based crypt()
-Name:		%{name}
-Version:	%version
-Release:	%release
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/%{module}-%{version}.tar.bz2
-URL:		ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/%{module}-%{version}.readme
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This  code  provides  various  crypt()-compatible  interfaces  to  the
@@ -21,13 +20,15 @@ MD5-based crypt() function found in  various *nixes. It's based on the
 implementation  found  on FreeBSD  2.2.[56]-RELEASE
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 perl -pi -e 's,(SSL_DIR.*)/lib\b,\1/%{_lib},g' Makefile.PL
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" echo | %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
-make test
+
+%check
+%make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,4 +42,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{perl_vendorlib}/Crypt/PasswdMD5.pm
 %{_mandir}/*/*
-
