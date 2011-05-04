@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:	Perl extension for crypt()-compatible interfaces to the MD5-based crypt()
 License:	GPL+ or Artistic
