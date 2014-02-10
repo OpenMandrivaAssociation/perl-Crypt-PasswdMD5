@@ -1,14 +1,14 @@
 %define	modname	 Crypt-PasswdMD5
-%define	modver 1.3
+%define modver 1.40
 
 Summary:	Perl extension for crypt()-compatible interfaces to the MD5-based crypt()
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.bz2
+Source0:	ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Crypt/Crypt-PasswdMD5-%{modver}.tgz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 
@@ -35,4 +35,5 @@ CFLAGS="%{optflags}" echo | %{__perl} Makefile.PL INSTALLDIRS=vendor
 %doc README
 %{perl_vendorlib}/Crypt/PasswdMD5.pm
 %{_mandir}/man3/*
+
 
