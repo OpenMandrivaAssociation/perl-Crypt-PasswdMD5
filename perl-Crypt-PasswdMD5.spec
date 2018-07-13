@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Crypt/Crypt-PasswdMD5-%{modver}.tgz
 BuildArch:	noarch
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 
 %description
