@@ -4,11 +4,11 @@
 Summary:	Perl extension for crypt()-compatible interfaces to the MD5-based crypt()
 Name:		perl-%{modname}
 Version:	%{modver}
-Release:	1
+Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/ronsavage/Crypt-PasswdMD5
-Source0:	https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Crypt-PasswdMD5-1.46.tgz-%{modver}.tgz
+Source0:	https://cpan.metacpan.org/authors/id/R/RS/RSAVAGE/Crypt-PasswdMD5-%{modver}.tgz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
